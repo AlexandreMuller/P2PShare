@@ -1,13 +1,11 @@
 # Servidor P2P para Compartilhamento de Arquivos
 
-Este é um servidor P2P (peer-to-peer) desenvolvido em Python que permite compartilhar arquivos entre usuários através de links diretos e conectar múltiplos servidores em uma rede descentralizada.
+Este é um servidor P2P (peer-to-peer) desenvolvido em Python que permite compartilhar arquivos entre usuários através de links diretos.
 
 ## Características
 
 - 🔗 **Compartilhamento por Link**: Gere links diretos para seus arquivos
-- 🌐 **Rede P2P**: Conecte múltiplos servidores para formar uma rede
 - 📱 **Interface Web**: Interface HTML moderna e responsiva
-- 🔍 **Busca Distribuída**: Encontre arquivos em toda a rede P2P
 - 📊 **Estatísticas**: Acompanhe downloads e status da rede
 - 🔒 **Hash SHA-256**: Verificação de integridade dos arquivos
 
@@ -45,17 +43,6 @@ Abra seu navegador e acesse:
 2. **Link**: Após o upload, você receberá um link de compartilhamento
 3. **Compartilhar**: Envie o link para outras pessoas baixarem o arquivo
 
-### Conectar a Outros Peers
-
-1. Na seção "Conectar a Peers", digite o endereço de outro servidor
-2. Formato: `IP:PORTA` (exemplo: `192.168.1.100:5000`)
-3. Clique em "Conectar"
-
-Após conectar, você poderá:
-- Ver arquivos de outros peers
-- Baixar arquivos da rede distribuída
-- Seus arquivos ficam disponíveis para outros peers
-
 ## Estrutura de Pastas
 
 ```
@@ -78,14 +65,6 @@ Servidor P2P/
 ### Listar Arquivos
 - **GET** `/files`
 - Retorna JSON com lista de arquivos
-
-### Conectar Peer
-- **POST** `/connect_peer`
-- **Body**: `{"peer_address": "IP:PORTA"}`
-
-### Listar Peers
-- **GET** `/peers`
-- Retorna lista de peers conectados
 
 ## Configuração de Rede
 
@@ -115,8 +94,7 @@ Servidor P2P/
 
 ### Cenário 2: Rede de Escritório
 1. Cada pessoa inicia um servidor em sua máquina
-2. Conectam-se aos servidores uns dos outros
-3. Todos podem acessar arquivos de toda a rede
+2. Todos podem acessar arquivos compartilhados
 
 ### Cenário 3: Backup Distribuído
 1. Configure múltiplos servidores
@@ -130,14 +108,9 @@ Servidor P2P/
 python servidor.py 8080  # Use outra porta
 ```
 
-### Peer não conecta
-- Verifique se o IP e porta estão corretos
-- Confirme se o firewall não está bloqueando
-- Teste se o peer está online: acesse `http://IP:PORTA` no navegador
-
 ### Arquivo não encontrado
 - Verifique se o hash do arquivo está correto
-- Confirme se o peer que tem o arquivo está online
+- Confirme se o servidor que tem o arquivo está online
 - Recarregue a página para atualizar a lista
 
 ## Limitações
